@@ -1,0 +1,280 @@
+/* General Resets and Base Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    /* Smooth scroll for navigation links (e) */
+    scroll-behavior: smooth; 
+}
+
+/* --- Header Section Styling (g) --- */
+#navbar {
+    background-color: #4CAF50; /* Green background (g) */
+    padding: 15px 0;
+    position: fixed; /* Header should appear at the top (g) */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar nav ul li {
+    margin: 0 20px;
+}
+
+#navbar nav ul li a {
+    color: white; /* White text (g) */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+#navbar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* --- Section Styling --- */
+.content-section {
+    padding: 80px 10%;
+    margin-top: 0; /* Space accounted for by padding and hero section */
+}
+
+/* Adjust padding for the first section to clear the fixed header */
+#about {
+    margin-top: 80px; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #4CAF50;
+    font-size: 2em;
+}
+
+/* --- Home/Hero Section Styling (h) --- */
+.hero-section {
+    height: 100vh; /* Fixed position/full height (h) */
+    background: url('Tourism Images/image.jpg') no-repeat center center/cover; 
+    background-attachment: fixed; /* Fixed image background (h) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    /* Overlay for readability */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Services Grid Styling --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* --- Contact Form Styling (c, i) --- */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Submit button styled with green */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.reset-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* --- Footer Section Styling (f) --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 10%;
+    display: flex; /* Two columns (f) */
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+
+/* --- Responsive Design (j) --- */
+@media (max-width: 768px) {
+    /* Adjust padding for smaller screens */
+    .content-section {
+        padding: 50px 5%;
+    }
+
+    /* Stack navigation items */
+    #navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar nav ul li {
+        margin: 5px 0;
+    }
+    
+    #navbar {
+        padding: 10px 0;
+    }
+
+    /* Adjust padding for the first section to clear the new fixed header height */
+    #about {
+        margin-top: 150px; /* Increased to account for stacked nav */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    /* Stack footer columns */
+    footer {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Stack form buttons */
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+}

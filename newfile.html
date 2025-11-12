@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda Tourism Board - Pearl of Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Discover the Pearl of Africa</h1>
+            <p>Uganda is a breathtaking land of stunning natural beauty, rich cultural heritage, and incredible biodiversity. Known as the "Pearl of Africa," we offer unparalleled experiences, from the source of the Nile to mountain gorilla tracking in Bwindi.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>About Uganda Tourism</h2>
+        <p><strong>Definition of Tourism:</strong> Tourism involves travel for pleasure or business; it encompasses the activities of people traveling to and staying in places outside their usual environment for not more than one consecutive year for leisure, business, and other purposes.</p>
+        
+        <h3>Impact of COVID-19 on the Tourism Sector</h3>
+        <p>The COVID-19 pandemic severely impacted Uganda's tourism sector, leading to travel bans, border closures, and a significant loss of revenue. This affected tour operators, accommodation facilities, and conservation efforts.</p>
+        <h3>Solutions Implemented</h3>
+        <ul>
+            <li>Promotion of **domestic tourism** through special packages.</li>
+            <li>Implementation of **Strict Standard Operating Procedures (SOPs)** for traveler safety.</li>
+            <li>Digital marketing campaigns to **maintain visibility** for future travel.</li>
+        </ul>
+    </section>
+
+    <section id="services" class="content-section">
+        <h2>Our Services & Products</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Accommodation</h3>
+                <p>Hotels, lodges, tented camps, and resorts across all major parks and towns.</p>
+            </div>
+            <div class="service-item">
+                <h3>Transportation</h3>
+                <p>Safari vans, 4x4 vehicles, air charter services, and local transfers.</p>
+            </div>
+            <div class="service-item">
+                <h3>Tour Operations</h3>
+                <ul>
+                    <li>Guiding & Packaging</li>
+                    <li>Hiking, Trekking & Rock Climbing</li>
+                    <li>Wildlife Watching & Birdwatching</li>
+                    <li>Bungee Jumping & Surfing</li>
+                    <li>Camping & Hosting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>Book Your Visit</h2>
+        <p>Use the form below to book your tailored tour of Uganda's spectacular tourist sites.</p>
+        
+        <form id="booking-form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="e.g. user@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telephone Number:</label>
+                <input type="tel" id="phone" placeholder="e.g. +25677..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" placeholder="Your current city/country" required>
+            </div>
+
+            <div class="form-group">
+                <label for="park">Tourist Park:</label>
+                <select id="park" required>
+                    <option value="" disabled selected>Select a park...</option>
+                    <option value="murchison">Murchison Falls National Park</option>
+                    <option value="kidepo">Kidepo Valley National Park</option>
+                    <option value="bwindi">Bwindi Impenetrable National Park</option>
+                    <option value="queen">Queen Elizabeth National Park</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="visitDate">Intended Visit Date:</label>
+                <input type="date" id="visitDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message Area:</label>
+                <textarea id="message" rows="4" placeholder="Tell us about your trip interests..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Submit Booking</button>
+                <button type="reset" class="reset-btn">Reset Form</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-column left-col">
+            <h3>Uganda Tourism Board (UTB)</h3>
+            <p>UTB is a statutory organization mandated to promote and market Uganda as a preferred tourist destination, ensuring quality and sustainability in the sector.</p>
+        </div>
+        <div class="footer-column right-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#about">Our Mandate</a></li>
+                <li><a href="#services">All Services</a></li>
+                <li><a href="#contact">Get in Touch</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const form = document.getElementById('booking-form');
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    alert(`Please fill out the ${field.previousElementSibling.textContent.replace(':', '')} field.`);
+                    field.focus();
+                    isValid = false;
+                }
+            });
+            
+            // Prevent submission if not valid, otherwise allow default submit behavior for this simple example
+            return isValid;
+        }
+    </script>
+</body>
+</html>
